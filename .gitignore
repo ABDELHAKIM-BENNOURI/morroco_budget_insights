@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.egg-info/
+
+# Data sensible
+data/raw/
+data/clean/
+data/models/
+
+# Node
+node_modules/
+dashboard/node_modules/
+
+# Build
+dashboard/dist/
+
+# OS
+.DS_Store
+Thumbs.db.env
+
