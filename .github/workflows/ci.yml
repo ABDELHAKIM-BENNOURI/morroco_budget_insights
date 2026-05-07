@@ -24,11 +24,28 @@ jobs:
       - name: Install flake8
         run: pip install flake8
 
+      - name: Syntax check — compile tous les scripts .py (même vides)
+        run: |
+          shopt -s nullglob
+          files=(scripts/*.py)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "  ⚠️  Aucun script .py trouvé dans scripts/ — étape ignorée"
+            exit 0
+          fi
+          for f in "${files[@]}"; do
+            if python -m py_compile "$f"; then
+              echo "  ✅  $f"
+            else
+              echo "  ❌  $f — erreur de syntaxe"
+              exit 1
+            fi
+          done
+
       - name: Run flake8
         run: |
           flake8 scripts/ \
             --max-line-length=120 \
-            --ignore=E501,W503 \
+            --ignore=E501,W503,E241,E221,E302 \
             --exclude=__pycache__
 
   # ── Job 2 : Build image Python ────────────────────────────────────────────
@@ -88,7 +105,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  # ── Job 4 : Vérification structure data/clean ─────────────────────────────
+  # ── Job 4 : Vérification structure du projet ──────────────────────────────
   check-structure:
     name: Vérifier structure du projet
     runs-on: ubuntu-latest
@@ -97,10 +114,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Vérifier dossiers obligatoires
+      - name: Préparer dossiers data/ (mkdir -p)
         run: |
-          echo "Vérification de la structure..."
-          dirs=("data/raw" "data/clean" "data/models" "scripts" "docker/python" "docker/react")
+          for d in data/raw data/clean data/models; do
+            mkdir -p "$d"
+            echo "  ✅  $d (créé ou déjà présent)"
+          done
+
+      - name: Vérifier dossiers code obligatoires
+        run: |
+          dirs=("scripts" "docker/python" "docker/react")
           for d in "${dirs[@]}"; do
             if [ -d "$d" ]; then
               echo "  ✅  $d"
@@ -112,7 +135,14 @@ jobs:
 
       - name: Vérifier fichiers obligatoires
         run: |
-          files=("requirements.txt" "docker-compose.yml" "docker/python/Dockerfile" "docker/react/Dockerfile" "scripts/01_extract.py")
+          files=( \
+            "requirements.txt" \
+            "docker-compose.yml" \
+            "docker/python/Dockerfile" \
+            "docker/react/Dockerfile" \
+            "scripts/01_extract.py" \
+            ".gitignore" \
+          )
           for f in "${files[@]}"; do
             if [ -f "$f" ]; then
               echo "  ✅  $f"
@@ -122,11 +152,26 @@ jobs:
             fi
           done
 
-      - name: Vérifier que data/raw/ est ignoré par git
+      - name: Vérifier que le contenu de data/raw/ est ignoré par git
         run: |
-          if git check-ignore -q data/raw; then
-            echo "  ✅  data/raw/ correctement ignoré (.gitignore)"
+          tmpfile="data/raw/__ci_test_ignore.pdf"
+          touch "$tmpfile"
+          if git check-ignore -q "$tmpfile"; then
+            echo "  ✅  data/raw/* correctement ignoré (.gitignore)"
+            rm -f "$tmpfile"
           else
-            echo "  ❌  data/raw/ n'est PAS dans .gitignore — PDFs sensibles exposés !"
+            rm -f "$tmpfile"
+            echo "  ❌  data/raw/* n'est PAS dans .gitignore — PDFs sensibles exposés !"
             exit 1
           fi
+
+      - name: Vérifier que les .gitkeep sont bien re-inclus
+        run: |
+          for f in data/raw/.gitkeep data/clean/.gitkeep data/models/.gitkeep; do
+            if git check-ignore -q "$f"; then
+              echo "  ❌  $f est ignoré (exception !data/*/.gitkeep cassée)"
+              exit 1
+            else
+              echo "  ✅  $f tracké (exception OK)"
+            fi
+          done

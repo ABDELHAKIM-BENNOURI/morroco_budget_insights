@@ -5,10 +5,11 @@ __pycache__/
 .env
 *.egg-info/
 
-# Data sensible
-data/raw/
-data/clean/
-data/models/
+# Data sensible (contenu ignoré, structure trackée via .gitkeep)
+data/raw/*
+data/clean/*
+data/models/*
+!data/*/.gitkeep
 
 # Node
 node_modules/
