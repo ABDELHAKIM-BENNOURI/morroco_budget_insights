@@ -1,38 +1,71 @@
-version: "3.9"
+# docker-compose.yml — Orchestration PLF 2026
+#
+# Une seule commande :
+#   docker compose up
+#
+# 1. Le service `pipeline` (Python) exécute 02 → 05 puis exit 0,
+#    écrivant les figures dans le volume nommé `models_data`.
+# 2. Le service `dashboard` (React) attend la complétion du pipeline
+#    via depends_on.condition: service_completed_successfully, monte
+#    `models_data` en lecture seule sur /data/models, copie les
+#    JSONs vers public/data/, puis lance Vite en dev sur :5173.
 
 services:
 
-  python:
+  # ── Pipeline Python (02 → 05) — one-shot ───────────────────────────────────
+  pipeline:
     build:
       context: .
       dockerfile: docker/python/Dockerfile
-    container_name: budget_python
+    image: morocco_budget_insight_2026-pipeline:latest
+    container_name: budget_pipeline
     volumes:
+      # Sources : CSVs nettoyés (host) + PDFs (host, lecture seule).
       - ./scripts:/app/scripts
-      - ./data:/app/data
+      - ./data/raw:/app/data/raw:ro
+      - ./data/clean:/app/data/clean
+      # Sortie : volume nommé partagé avec le dashboard.
+      - models_data:/app/data/models
     env_file:
       - .env
     networks:
       - budget_net
+    restart: "no"          # one-shot : pas de redémarrage automatique
+    init: true
 
-  react:
+  # ── Dashboard React (Vite dev server, hot reload) ──────────────────────────
+  dashboard:
     build:
       context: .
       dockerfile: docker/react/Dockerfile
-    container_name: budget_react
+    image: morocco_budget_insight_2026-dashboard:latest
+    container_name: budget_dashboard
     ports:
       - "5173:5173"
     volumes:
+      # Code source (hot reload).
       - ./dashboard:/app
+      # Anonymous volume pour préserver /app/node_modules de l'image.
       - /app/node_modules
-      # Données figures Plotly (lecture seule) — consommées par
-      # dashboard/scripts/copy-data.mjs (predev / prebuild).
-      - ./data/models:/data/models:ro
+      # Lecture seule sur les figures produites par le pipeline.
+      - models_data:/data/models:ro
     env_file:
       - .env
     networks:
       - budget_net
+    depends_on:
+      pipeline:
+        condition: service_completed_successfully
+    init: true
+    stdin_open: true
+    tty: true
 
+# ── Volume partagé pour les figures Plotly ───────────────────────────────────
+volumes:
+  models_data:
+    name: morocco_budget_models_data
+
+# ── Réseau interne ───────────────────────────────────────────────────────────
 networks:
   budget_net:
     driver: bridge
