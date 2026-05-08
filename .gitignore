@@ -6,8 +6,11 @@ __pycache__/
 *.egg-info/
 
 # Data sensible (contenu ignoré, structure trackée via .gitkeep)
+# Exception : data/clean/*.csv est tracké (texte, ~80 KB, source du pipeline
+# en CI pour le job deploy-pages — sans ces CSV, pas de figures à déployer).
 data/raw/*
 data/clean/*
+!data/clean/*.csv
 data/models/*
 !data/*/.gitkeep
 

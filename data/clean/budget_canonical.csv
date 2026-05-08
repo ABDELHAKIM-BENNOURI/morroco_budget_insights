@@ -1,0 +1,87 @@
+﻿type,niveau,categorie,secteur,label,parent,value_mmdh,is_total,year,source
+recette,1,recettes_fiscales,,1 - Impôts directs et taxes assimilées,recettes_fiscales,165.6902,False,2026,Note-presentation_Fr p.29
+recette,1,recettes_fiscales,,2 - Impôts indirects,recettes_fiscales,167.8896,False,2026,Note-presentation_Fr p.29
+recette,1,recettes_fiscales,,3 - Droits de douane,recettes_fiscales,18.1802,False,2026,Note-presentation_Fr p.29
+recette,1,recettes_fiscales,,4 - Droits d'enregistrement et de timbre,recettes_fiscales,24.3212,False,2026,Note-presentation_Fr p.29
+recette,1,recettes_non_fiscales,,5 - Revenus du Domaine de l'Etat,recettes_non_fiscales,0.5995,False,2026,Note-presentation_Fr p.29
+recette,1,recettes_non_fiscales,,"6 - Produits des monopoles, d'exploitations et des participations financières de l'Etat",recettes_non_fiscales,27.522,False,2026,Note-presentation_Fr p.29
+recette,1,recettes_non_fiscales,,7 - Dons et Legs,recettes_non_fiscales,1.5,False,2026,Note-presentation_Fr p.29
+recette,1,recettes_non_fiscales,,8 - Produits de Cession des Participations de l'Etat,recettes_non_fiscales,6.0,False,2026,Note-presentation_Fr p.29
+recette,1,recettes_non_fiscales,,9 - Recettes diverses,recettes_non_fiscales,9.6224,False,2026,Note-presentation_Fr p.29
+depense,2,fonctionnement,Souveraineté,ADMINISTRATION DE LA DEFENSE NATIONALE,fonctionnement,55.3195,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Souveraineté,ADMINISTRATION DE LA DEFENSE NATIONALE,investissement,13.0,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Souveraineté,CHAMBRE DES CONSEILLERS,fonctionnement,0.5774,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,CHAMBRE DES CONSEILLERS,investissement,0.025,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Souveraineté,CHAMBRE DES REPRESENTANTS,fonctionnement,0.6484,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,CHAMBRE DES REPRESENTANTS,investissement,0.04,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Souveraineté,CHEF DU GOUVERNEMENT,fonctionnement,1.1415,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,CHEF DU GOUVERNEMENT,investissement,0.9241,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Autre,"CONSEIL ECONOMIQUE, SOCIAL ET ENVIRONNEMENTAL",fonctionnement,0.1362,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Autre,"CONSEIL ECONOMIQUE, SOCIAL ET ENVIRONNEMENTAL",investissement,0.014,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Autre,CONSEIL NATIONAL DES DROITS DE L’HOMME,fonctionnement,0.2059,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Autre,CONSEIL NATIONAL DES DROITS DE L’HOMME,investissement,0.014,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Souveraineté,CONSEIL SUPERIEUR DU POUVOIR JUDICIAIRE,fonctionnement,3.8,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Souveraineté,CONSEIL SUPERIEUR DU POUVOIR JUDICIAIRE,investissement,0.2673,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Souveraineté,COUR ROYALE,fonctionnement,2.1858,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,COUR ROYALE,investissement,0.1316,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Souveraineté,DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION,fonctionnement,4.3839,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Souveraineté,DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION,investissement,0.6,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Autre,DEPENSES IMPREVUES ET DOTATIONS PROVISIONNELLES,fonctionnement,3.4,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Autre,HAUT COMMISSARIAT AU PLAN,fonctionnement,0.5993,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Autre,HAUT COMMISSARIAT AU PLAN,investissement,0.0276,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Souveraineté,HAUT COMMISSARIAT AUX ANCIENS RESISTANTS ET ANCIENS MEMBRES DE L'ARMEE DE LIBERATION,fonctionnement,0.1752,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Souveraineté,HAUT COMMISSARIAT AUX ANCIENS RESISTANTS ET ANCIENS MEMBRES DE L'ARMEE DE LIBERATION,investissement,0.0185,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Autre,"INSTANCE NATIONALE DE LA PROBITÉ, DE LA PRÉVENTION ET DE LA LUTTE CONTRE LA CORRUPTION",fonctionnement,0.1163,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Autre,"INSTANCE NATIONALE DE LA PROBITÉ, DE LA PRÉVENTION ET DE LA LUTTE CONTRE LA CORRUPTION",investissement,0.0388,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Souveraineté,JURIDICTIONS FINANCIERES,fonctionnement,0.6713,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,JURIDICTIONS FINANCIERES,investissement,0.09,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Économique,"MINISTERE DE L'AGRICULTURE, DE LA PECHE MARITIME, DU DEVELOPPEMENT RURAL ET DES EAUX ET FORETS",fonctionnement,4.8971,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Économique,"MINISTERE DE L'AGRICULTURE, DE LA PECHE MARITIME, DU DEVELOPPEMENT RURAL ET DES EAUX ET FORETS",investissement,21.7876,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Infra,"MINISTERE DE L'AMENAGEMENT DU TERRITOIRE NATIONAL, DE L'URBANISME, DE L'HABITAT ET DE LA POLITIQUE DE LA VILLE",fonctionnement,1.4136,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Infra,"MINISTERE DE L'AMENAGEMENT DU TERRITOIRE NATIONAL, DE L'URBANISME, DE L'HABITAT ET DE LA POLITIQUE DE LA VILLE",investissement,4.7614,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Économique,MINISTERE DE L'ECONOMIE ET DES FINANCES,fonctionnement,5.8003,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Économique,MINISTERE DE L'ECONOMIE ET DES FINANCES,investissement,0.6162,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Économique,MINISTERE DE L'ECONOMIE ET DES FINANCES- Charges communes,fonctionnement,45.453,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Économique,MINISTERE DE L'ECONOMIE ET DES FINANCES- Charges communes,investissement,44.082,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Économique,"MINISTERE DE L'ECONOMIE ET DES FINANCES-REMBOURSEMENTS, DÉGRÈVEMENTS ET RESTITUTIONS, FISCAUX",fonctionnement,9.6328,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Social,"MINISTERE DE L'EDUCATION NATIONALE, DU PRESCOLAIRE ET DES SPORTS",fonctionnement,91.0077,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Social,"MINISTERE DE L'EDUCATION NATIONALE, DU PRESCOLAIRE ET DES SPORTS",investissement,13.3581,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Social,"MINISTERE DE L'ENSEIGNEMENT SUPERIEUR, DE LA RECHERCHE SCIENTIFIQUE ET DE L'INNOVATION",fonctionnement,15.5228,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Social,"MINISTERE DE L'ENSEIGNEMENT SUPERIEUR, DE LA RECHERCHE SCIENTIFIQUE ET DE L'INNOVATION",investissement,2.7318,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Infra,MINISTERE DE L'EQUIPEMENT ET DE L'EAU,fonctionnement,1.8015,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Infra,MINISTERE DE L'EQUIPEMENT ET DE L'EAU,investissement,58.7664,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Social,"MINISTERE DE L'INCLUSION ECONOMIQUE, DE LA PETITE ENTREPRISE, DE L'EMPLOI ET DES COMPETENCES",fonctionnement,1.7981,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Social,"MINISTERE DE L'INCLUSION ECONOMIQUE, DE LA PETITE ENTREPRISE, DE L'EMPLOI ET DES COMPETENCES",investissement,0.6949,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Économique,MINISTERE DE L'INDUSTRIE ET DU COMMERCE,fonctionnement,0.7008,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Économique,MINISTERE DE L'INDUSTRIE ET DU COMMERCE,investissement,1.5089,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Souveraineté,MINISTERE DE L'INTERIEUR,fonctionnement,45.1999,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,MINISTERE DE L'INTERIEUR,investissement,9.6668,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Social,"MINISTERE DE LA JEUNESSE, DE LA CULTURE ET DE LA COMMUNICATION",fonctionnement,3.7404,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Social,"MINISTERE DE LA JEUNESSE, DE LA CULTURE ET DE LA COMMUNICATION",investissement,2.8618,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Souveraineté,MINISTERE DE LA JUSTICE,fonctionnement,4.4974,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,MINISTERE DE LA JUSTICE,investissement,0.4525,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Social,MINISTERE DE LA SANTE ET DE LA PROTECTION SOCIALE,fonctionnement,27.8589,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Social,MINISTERE DE LA SANTE ET DE LA PROTECTION SOCIALE,investissement,27.1838,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Social,"MINISTERE DE LA SOLIDARITÉ, DE L'INSERTION SOCIALE ET DE LA FAMILLE",fonctionnement,0.8379,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Social,"MINISTERE DE LA SOLIDARITÉ, DE L'INSERTION SOCIALE ET DE LA FAMILLE",investissement,0.3958,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Infra,MINISTERE DE LA TRANSITION ENERGETIQUE ET DU DEVELOPPEMENT DURABLE,fonctionnement,0.6176,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Infra,MINISTERE DE LA TRANSITION ENERGETIQUE ET DU DEVELOPPEMENT DURABLE,investissement,0.2173,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Économique,"MINISTERE DELEGUE AUPRES DU CHEF DU GOUVERNEMENT CHARGE DE L'INVESTISSEMENT, DE LA CONVERGENCE ET DE L'EVALUATION DES POLITIQUES PUBLIQUES",fonctionnement,0.3941,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Économique,"MINISTERE DELEGUE AUPRES DU CHEF DU GOUVERNEMENT CHARGE DE L'INVESTISSEMENT, DE LA CONVERGENCE ET DE L'EVALUATION DES POLITIQUES PUBLIQUES",investissement,3.454,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Infra,MINISTERE DELEGUE AUPRES DU CHEF DU GOUVERNEMENT CHARGE DE LA TRANSITION NUMERIQUE ET DE LA REFORME DE L'ADMINISRATION,fonctionnement,0.2512,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Infra,MINISTERE DELEGUE AUPRES DU CHEF DU GOUVERNEMENT CHARGE DE LA TRANSITION NUMERIQUE ET DE LA REFORME DE L'ADMINISRATION,investissement,1.5792,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Souveraineté,MINISTERE DELEGUE AUPRES DU CHEF DU GOUVERNEMENT CHARGE DES RELATIONS AVEC LE PARLEMENT,fonctionnement,0.0946,False,2026,Note-presentation_Fr p.164
+depense,2,investissement,Souveraineté,MINISTERE DELEGUE AUPRES DU CHEF DU GOUVERNEMENT CHARGE DES RELATIONS AVEC LE PARLEMENT,investissement,0.0333,False,2026,Note-presentation_Fr p.164
+depense,2,fonctionnement,Souveraineté,"MINISTERE DES AFFAIRES ÉTRANGÈRES, DE LA COOPÉRATION AFRICAINE ET DES MAROCAINS RÉSIDANT A L'ETRANGER",fonctionnement,4.6648,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,"MINISTERE DES AFFAIRES ÉTRANGÈRES, DE LA COOPÉRATION AFRICAINE ET DES MAROCAINS RÉSIDANT A L'ETRANGER",investissement,0.48,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Souveraineté,MINISTERE DES HABOUS ET DES AFFAIRES ISLAMIQUES,fonctionnement,6.2719,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Souveraineté,MINISTERE DES HABOUS ET DES AFFAIRES ISLAMIQUES,investissement,1.9302,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Économique,"MINISTERE DU TOURISME, DE L'ARTISANAT ET DE L'ECONOMIE SOCIALE ET SOLIDAIRE",fonctionnement,0.6195,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Économique,"MINISTERE DU TOURISME, DE L'ARTISANAT ET DE L'ECONOMIE SOCIALE ET SOLIDAIRE",investissement,2.0623,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Infra,MINISTERE DU TRANSPORT ET DE LA LOGISTIQUE,fonctionnement,0.3502,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Infra,MINISTERE DU TRANSPORT ET DE LA LOGISTIQUE,investissement,1.7831,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Souveraineté,SA MAJESTE LE ROI,fonctionnement,0.5435,False,2026,Note-presentation_Fr p.163
+depense,2,fonctionnement,Autre,SECRETARIAT GENERAL DU GOUVERNEMENT,fonctionnement,0.1604,False,2026,Note-presentation_Fr p.163
+depense,2,investissement,Autre,SECRETARIAT GENERAL DU GOUVERNEMENT,investissement,0.015,False,2026,Note-presentation_Fr p.163
+depense,2,dette,Souveraineté,Dette Extérieure,dette,19.516,False,2025,SLF-23 Fr-2025 p.22
+depense,2,dette,Souveraineté,Dette Intérieure,dette,87.7386,False,2025,SLF-23 Fr-2025 p.22
