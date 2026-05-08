@@ -18,6 +18,9 @@ dashboard/node_modules/
 # Build
 dashboard/dist/
 
+# Données figures copiées au runtime par dashboard/scripts/copy-data.mjs
+dashboard/public/data/
+
 # OS
 .DS_Store
 Thumbs.db.env
