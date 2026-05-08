@@ -1,0 +1,40 @@
+/* tokens.css — Design tokens du dashboard PLF 2026.
+   Synchronisés avec la palette des figures Plotly (04_sankey.py / 05_treemap.py)
+   pour garantir la cohérence visuelle entre cartes, narration et graphiques. */
+
+:root {
+  /* Texte */
+  --color-ink:           #111827;
+  --color-text:          #1F2937;
+  --color-muted:         #6B7280;
+  --color-soft-border:   #E5E7EB;
+
+  /* Couleurs métier (alignées Sankey) */
+  --color-primary:       #1F4E79;   /* Budget Général (hub) */
+  --color-recette:       #2E8B57;   /* Vert recettes */
+  --color-recette-soft:  #A4C2A5;   /* Vert pâle (Autres recettes) */
+  --color-depense:       #E07B00;   /* Orange dépenses */
+  --color-depense-soft:  #F2A33A;
+  --color-emprunt:       #C0504D;   /* Rouge atténué — dette */
+
+  /* Couleurs sectorielles (alignées Treemap) */
+  --color-secteur-social:        #1F77B4;
+  --color-secteur-souverainete:  #C0504D;
+  --color-secteur-economique:    #2CA02C;
+  --color-secteur-infra:         #6A4C93;
+  --color-secteur-autre:         #7F7F7F;
+
+  /* Surfaces */
+  --color-bg:            #F9FAFB;
+  --color-surface:       #FFFFFF;
+  --color-surface-alt:   #F3F4F6;
+
+  /* Typographie */
+  --font-sans: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
+
+  /* Rayons / ombres */
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow-card: 0 1px 2px rgba(17, 24, 39, 0.04), 0 1px 3px rgba(17, 24, 39, 0.06);
+}

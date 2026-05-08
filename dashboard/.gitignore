@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vite/
+.env.local
+.env.*.local
+
+# Données générées par le pipeline Python — copiées par scripts/copy-data.mjs
+public/data/
+
+# OS / IDE
+.DS_Store
+*.log

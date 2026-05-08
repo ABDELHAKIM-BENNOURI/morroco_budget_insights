@@ -1,0 +1,29 @@
+{
+  "name": "morocco-budget-insight-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Dashboard React pour le PLF 2026 (Maroc) — Sankey + Treemap.",
+  "scripts": {
+    "predev": "node scripts/copy-data.mjs",
+    "prebuild": "node scripts/copy-data.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "plotly.js-dist-min": "^2.35.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-plotly.js": "^2.6.0",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.11"
+  }
+}
