@@ -175,3 +175,88 @@ jobs:
               echo "  ✅  $f tracké (exception OK)"
             fi
           done
+
+  # ── Job 5 : Déploiement GitHub Pages ──────────────────────────────────────
+  # Publie dashboard/dist/ sur GitHub Pages (sur push vers main uniquement).
+  # Pré-requis pour des figures fonctionnelles : data/clean/*.csv doit être
+  # disponible sur le runner (committé OU récupéré dans une étape custom).
+  # Sans CSV, le pipeline est sauté et le dashboard est déployé sans figures
+  # (les fetch /data/*.json renverront 404 côté navigateur).
+  deploy-pages:
+    name: Déployer dashboard (GitHub Pages)
+    runs-on: ubuntu-latest
+    needs: [lint-python, build-python, build-react, check-structure]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Bloquer si dashboard/ absent
+        run: |
+          if [ ! -f "dashboard/package.json" ]; then
+            echo "❌ dashboard/package.json introuvable — rien à déployer."
+            exit 1
+          fi
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        run: pip install --no-cache-dir -r requirements.txt
+
+      - name: Pipeline data 02 → 05 (best effort)
+        id: pipeline
+        run: |
+          set -e
+          if ! ls data/clean/*.csv >/dev/null 2>&1; then
+            echo "::warning::data/clean/*.csv absent — pipeline sauté."
+            echo "             Le dashboard sera déployé sans figures (404 en runtime)."
+            echo "             → committez data/clean/ ou adaptez le workflow pour les fetcher."
+            echo "skipped=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python scripts/02_clean.py
+          python scripts/03_model.py
+          python scripts/04_sankey.py
+          python scripts/05_treemap.py
+          echo "skipped=false" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dépendances npm
+        working-directory: dashboard
+        run: npm install --no-audit --no-fund
+
+      - name: Build dashboard (Vite)
+        working-directory: dashboard
+        env:
+          # GH Pages projet : `/<repo>/` ; user/org pages : `/`.
+          BASE_PATH: /${{ github.event.repository.name }}/
+        run: npm run build -- --base="$BASE_PATH"
+
+      - name: Configurer Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard/dist
+
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
